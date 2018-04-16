@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ToastController } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
-import { BarcodeService} from '../../providers/barcode-service';
+import { BarcodeService } from '../../providers/barcode-service';
 import { Platform } from 'ionic-angular';
 
 @Component({
