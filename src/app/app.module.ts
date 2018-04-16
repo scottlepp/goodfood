@@ -14,7 +14,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { ItemPageModule } from '../pages/item/item.module';
 import { ListPageModule } from '../pages/list/list.module';
 import { SocialSharing } from '@ionic-native/social-sharing';
-import BarcodeService from '../providers/barcode-service';
+import { BarcodeService } from '../providers/barcode-service';
 import { HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({

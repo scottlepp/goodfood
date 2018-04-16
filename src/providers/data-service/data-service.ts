@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map'
 import { Observable } from 'rxjs/Observable';
@@ -35,6 +35,8 @@ export class DataServiceProvider {
   }
 
   fetchProduct(item: string): Observable<any[]>{
+    // CORS issue here (probably) when running from gh pages
+    
     // const service = '/nutrition';
     // let params = new HttpParams();
     // params = params.append('offeringGroupId', '00001');
@@ -43,14 +45,10 @@ export class DataServiceProvider {
 
     // return this.http.get<Array<any>>(service,  { params: params })
 
-    // TODO - attempted JSONP to get around CORS
-    // let apiURL = `${service}?offeringGroupId=00001&languageTypeCode=en&offeringId=${item}`;
-    // return this.http.jsonp<Array<any>>(apiURL, 'JSONP_CALLBACK');
-
-    const service = 'https://api.gfs.com/ordering/rest/nutritionService/getNutritionInfo';
-    const apiURL = `${service}?offeringGroupId=00001&languageTypeCode=en&offeringId=${item}`;
     // using proxy setup on aws to get around CORS
     // https://github.com/Glifery/cors-proxy
+    const service = 'https://api.gfs.com/ordering/rest/nutritionService/getNutritionInfo';
+    const apiURL = `${service}?offeringGroupId=00001&languageTypeCode=en&offeringId=${item}`;
     const proxy = 'https://hep7f335fe.execute-api.us-east-2.amazonaws.com/dev/?url=';
 
     const proxied = proxy + encodeURIComponent(apiURL);
