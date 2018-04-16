@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Nutritionist
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="item-page">
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Item Number</ion-label>
+      <ion-input type="text" [(ngModel)]="itemId" (input)="onItemChange()"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!product.itemCode">
+      <button (click)="fetchNutrition()" class="nutrition-button" ion-button full>View Nutrition</button>
+    </ion-item>
+  </ion-list>
+  
+  <ion-card *ngIf="product.itemCode">
+    <img src="https://loremflickr.com/320/240/food?random=1"/>
+    <ion-card-content>
+      <ion-card-title>
+        Product: {{product.itemCode}}
+        <button ion-fab color="secondary" (click)="share()">
+          <ion-icon name="share"></ion-icon>
+        </button>
+      </ion-card-title>
+      <p>
+        {{product.itemDesc}}
+      </p>
+      <ion-item-group *ngFor="let key of Object.keys(categories)">
+        <ion-item-divider color="light">{{key}}</ion-item-divider>
+        <div class="row" *ngFor="let item of categories[key]">
+          <div class="col">{{item.name}}</div>
+          <div class="col">{{item.value}}</div>
+        </div>
+      </ion-item-group>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

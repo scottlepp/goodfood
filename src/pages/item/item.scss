@@ -1,0 +1,29 @@
+.nutrition-button.button.item-button {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.item-page {
+  .col {
+    border-top: solid 1px lightgray;;
+    border-bottom-style: none;
+  }
+  
+  .row:last-child .col {
+    border-bottom: solid 1px lightgray;;
+  }
+  
+  .card {
+    padding: 0 10px;
+    box-shadow: none;
+    img {
+      max-height: 250px;
+    }
+    p {
+      padding-bottom: 10px;
+    }
+    .fab {
+      float: right;
+    }
+  }
+}

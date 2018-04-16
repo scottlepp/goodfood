@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Nutritionist
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Recent Items
+    </ion-list-header>
+    <ion-item *ngFor="let item of items; let i = index;" (click)="select(item)">
+      <ion-avatar item-start>
+        <img [src]="'https://loremflickr.com/320/240/food?random=' + i">
+      </ion-avatar>
+      <h2>{{item.itemCode}}</h2>
+      <h3>{{item.itemDesc}}</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>
