@@ -53,7 +53,8 @@ export class ItemPage {
   }
 
   fetch() {
-    const item = this.navParams.data.selected || this.dataService.selected;
+    const params = this.navParams.data;
+    const item = params.selected || this.dataService.selected || params.itemId;
     if (item !== undefined) {
       this.itemId = item;
       this.dataService.selected = undefined;

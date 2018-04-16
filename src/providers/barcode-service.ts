@@ -1,7 +1,9 @@
 import Quagga from 'quagga';
 import { Subject } from 'rxjs/Subject';
+import { Injectable } from '@angular/core';
 
-export default class BarcodeService {
+@Injectable()
+export class BarcodeService {
   subject:Subject<any>;
 
   public start() {
