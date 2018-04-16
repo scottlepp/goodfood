@@ -11,7 +11,7 @@
     <ion-row>
       <ion-col text-center>
         <h1 text-center>
-          <button class="scan-button" ion-button (click)="scan()">Scan Now</button>
+          <button [hidden]="scanning" class="scan-button" ion-button (click)="scan()">Scan Now</button>
         </h1>
       </ion-col>
     </ion-row>
