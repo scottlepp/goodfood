@@ -10,9 +10,9 @@ Run `ionic serve` for a dev server. Navigate to `http://localhost:8100/`. The ap
 ## Dev testing
 * Run `ionic serve -c`
 * Native Hybrid (cordova)
-** Use the [Ionic Dev App](https://ionicframework.com/docs/pro/devapp/) to test natively on your device.
+* * Use the [Ionic Dev App](https://ionicframework.com/docs/pro/devapp/) to test natively on your device.
 * PWA
-** Open a link to the local server from your device (port must be open)
+* * Open a link to the local server from your device (port must be open)
 
 ## Code scaffolding
 
